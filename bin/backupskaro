@@ -1,0 +1,29 @@
+#!/bin/bash
+
+DISTDIR=/Volumes/Hulk/backup/gallifrey/
+HOME=/Users/kern/
+LOG=/tmp/`date +'%Y-%m-%d'`-backup.log
+
+
+if [ ! -d $DISTDIR ]; then 
+	logger 'Mount the backup destination'
+	exit 1
+fi
+
+rsync -ah --delete $HOME/Code $DISTDIR > $LOG
+rsync -ah --delete $HOME/Documents $DISTDIR >> $LOG
+rsync -ah --delete $HOME/Pictures $DISTDIR >> $LOG
+rsync -ah --delete $HOME/Music $DISTDIR >> $LOG
+
+brew list > $DISTDIR/brew.txt
+gem list > $DISTDIR/gems.txt
+ls -l /Applications > $DISTDIR/apps.txt
+
+if [ -s $LOG ]; then
+	logger "Check the log for errors"
+	exit 1
+else
+	logger "Backup complete"
+	rm $LOG
+	exit 0
+fi
