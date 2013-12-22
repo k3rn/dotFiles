@@ -14,6 +14,9 @@ rsync -ah --delete $HOME/Code $DISTDIR > $LOG
 rsync -ah --delete $HOME/Documents $DISTDIR >> $LOG
 rsync -ah --delete $HOME/Pictures $DISTDIR >> $LOG
 rsync -ah --delete $HOME/Music $DISTDIR >> $LOG
+rsync -ah --delete $HOME/Library/Application\ Support/Firefox $DISTDIR/appsdata >> $LOG
+rsync -ah --delete $HOME/Library/Application\ Support/SABnzbd $DISTDIR/appsdata >> $LOG
+rsync -ah --delete /usr/local/etc/sickbeard $DISTDIR/appsdata >> $LOG
 
 brew list > $DISTDIR/brew.txt
 gem list > $DISTDIR/gems.txt
