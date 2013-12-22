@@ -1,0 +1,11 @@
+#!/bin/bash
+
+pyextractor=~/Code/pyExtractor/extract.py
+tmpfile=/tmp/downloadfma
+echo 'Downloading page...'
+wget $1 -O $tmpfile -o /dev/null
+python $pyextractor -u $tmpfile
+grep 'music/download' "$tmpfile - url.csv" > $tmpfile.links
+'Downloading music...'
+wget -c --content-disposition -i $tmpfile.links -P $2
+rm "$tmpfile - url.csv" $tmpfile $tmpfile.links
