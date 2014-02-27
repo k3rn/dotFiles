@@ -13,9 +13,10 @@ set __fish_git_prompt_showstashstate 'yes'
 function glog; git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative; end
 function gst; git status; end
 
-set PATH $HOME/.rbenv/bin $PATH
-set PATH $HOME/.rbenv/shims $PATH
-rbenv rehash >/dev/null ^&1
-
+if test `uname` = 'Darwin'
+	set PATH $HOME/.rbenv/bin $PATH
+	set PATH $HOME/.rbenv/shims $PATH
+	rbenv rehash >/dev/null ^&1
+end
 function pg_start; launchctl load -w /usr/local/Cellar/postgresql/9.3.2/homebrew.mxcl.postgresql.plist; end
 function pg_stop; launchctl unload -w /usr/local/Cellar/postgresql/9.3.2/homebrew.mxcl.postgresql.plist; end
