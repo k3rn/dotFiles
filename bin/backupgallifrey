@@ -10,16 +10,15 @@ if [ ! -d $DISTDIR ]; then
 	exit 1
 fi
 
-rsync -ah --delete $HOME/Code $DISTDIR > $LOG
-rsync -ah --delete $HOME/Documents $DISTDIR >> $LOG
-rsync -ah --delete $HOME/Pictures $DISTDIR >> $LOG
-rsync -ah --delete $HOME/Music $DISTDIR >> $LOG
-rsync -ah --delete $HOME/Library/Application\ Support/Firefox $DISTDIR/appsdata >> $LOG
-rsync -ah --delete $HOME/Library/Application\ Support/SABnzbd $DISTDIR/appsdata >> $LOG
-rsync -ah --delete /usr/local/etc/sickbeard $DISTDIR/appsdata >> $LOG
+/usr/local/bin/rsync -ah --delete $HOME/Code $DISTDIR > $LOG
+/usr/local/bin/rsync -ah --delete $HOME/Documents $DISTDIR >> $LOG
+/usr/local/bin/rsync -ah --delete $HOME/Pictures $DISTDIR >> $LOG
+/usr/local/bin/rsync -ah --delete $HOME/Music $DISTDIR >> $LOG
+/usr/local/bin/rsync -ah --delete $HOME/Library/Application\ Support/Firefox $DISTDIR/appsdata >> $LOG
+/usr/local/bin/rsync -ah --delete $HOME/Library/Application\ Support/SABnzbd $DISTDIR/appsdata >> $LOG
+/usr/local/bin/rsync -ah --delete /usr/local/etc/sickbeard $DISTDIR/appsdata >> $LOG
 
-brew list > $DISTDIR/brew.txt
-gem list > $DISTDIR/gems.txt
+/usr/local/bin/brew list > $DISTDIR/brew.txt
 ls -l /Applications > $DISTDIR/apps.txt
 
 if [ -s $LOG ]; then
