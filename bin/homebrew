@@ -1,0 +1,13 @@
+#!/bin/bash
+
+BREW=/usr/local/bin/brew
+
+$BREW update
+$BREW cleanup
+
+RESULT=`$BREW outdated`
+
+if [ -z "$RESULT"  ]; then
+	/usr/local/bin/terminal-notifier -message 'You have homebrew updates available!'
+	exit 0
+fi
