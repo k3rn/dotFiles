@@ -20,3 +20,5 @@ if test `uname` = 'Darwin'
 end
 function pg_start; launchctl load -w /usr/local/Cellar/postgresql/9.3.2/homebrew.mxcl.postgresql.plist; end
 function pg_stop; launchctl unload -w /usr/local/Cellar/postgresql/9.3.2/homebrew.mxcl.postgresql.plist; end
+
+alias tmux "tmux -2"
