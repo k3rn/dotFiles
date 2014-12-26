@@ -18,8 +18,8 @@ set -g PROJECT_HOME $HOME/Code
 function glog; git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative; end
 function gst; git status; end
 
-function pg_start; launchctl load -w /usr/local/Cellar/postgresql/9.3.2/homebrew.mxcl.postgresql.plist; end
-function pg_stop; launchctl unload -w /usr/local/Cellar/postgresql/9.3.2/homebrew.mxcl.postgresql.plist; end
+function pg_start; pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start; end
+function pg_stop;  pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop; end
 
 alias tmux "tmux -2"
 alias vimt "vim -c 'NERDTree|autocmd VimEnter * wincmd p'"
