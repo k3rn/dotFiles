@@ -8,9 +8,11 @@ set -x GOPATH /Users/kern/Code/go
 
 # virtualfish
 set -g VIRTUALFISH_COMPAT_ALIASES
+set -g PROJECT_HOME $HOME/Code
 . ~/Code/virtualfish/virtual.fish
 . ~/Code/virtualfish/auto_activation.fish
 . ~/Code/virtualfish/global_requirements.fish
+. ~/Code/virtualfish/projects.fish
 
 # some small function to facilitate the day to day
 function glog; git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative; end
