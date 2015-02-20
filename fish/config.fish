@@ -5,6 +5,7 @@ set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'
 set HULK /Volumes/Hulk/
 set -x GOPATH /Users/kern/Code/go
+set -x EDITOR vim
 
 # virtualfish
 set -g VIRTUALFISH_COMPAT_ALIASES
@@ -13,6 +14,10 @@ set -g PROJECT_HOME $HOME/Code
 . ~/Code/virtualfish/auto_activation.fish
 . ~/Code/virtualfish/global_requirements.fish
 . ~/Code/virtualfish/projects.fish
+
+# chruby
+. /usr/local/share/chruby/chruby.fish
+. /usr/local/share/chruby/auto.fish
 
 # some small function to facilitate the day to day
 function glog; git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative; end
