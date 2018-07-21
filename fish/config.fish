@@ -12,6 +12,7 @@ source ~/Code/dotFiles/fish/shortcuts.fish
 # virtualfish
 set -g PROJECT_HOME $HOME/Code
 eval (python -m virtualfish auto_activation compat_aliases projects)
+status --is-interactive; and source (pyenv init -|psub)
 
 # some small function to facilitate the day to day
 function glog; git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative; end
