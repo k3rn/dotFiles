@@ -1,5 +1,13 @@
 [user]
 	name = Mateus Kern
 	email = kern@mateuskern.com
+	signingkey = E0A6AB42
 [core]
 	excludesfile = ~/Code/dotFiles/gitignoreglobal
+	quotepath = false
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[difftool]
+	prompt = false
