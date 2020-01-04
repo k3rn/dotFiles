@@ -1,4 +1,4 @@
-set PATH $HOME/Code/dotFiles/bin $HOME/homebrew/bin $HOME/Code/go/bin $HOME/.local/bin $PATH
+set PATH $HOME/Code/dotFiles/bin $HOME/homebrew/bin $HOME/Code/go/bin $HOME/.local/bin $HOME/.cargo/bin $HOME/.poetry/bin $PATH
 set fish_greeting ""
 set __fish_prompt_hostname (hostname|cut -d . -f 1)
 set __fish_git_prompt_showdirtystate 'yes'
