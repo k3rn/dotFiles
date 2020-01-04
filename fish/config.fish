@@ -10,8 +10,8 @@ set -gx HOMEBREW_CASK_OPTS "--appdir=~/Applications"
 set -gx VIMRUNTIME /Users/kern/homebrew/share/vim/vim81
 
 source ~/Code/dotFiles/fish/shortcuts.fish
-status --is-interactive; and source (pyenv init -|psub)
-status --is-interactive; and source (pyenv virtualenv-init -|psub)
+status --is-interactive; and pyenv init - | source
+status --is-interactive; and pyenv virtualenv-init - | source
 
 # some small function to facilitate the day to day
 function glog; git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative; end
