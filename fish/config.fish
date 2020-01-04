@@ -7,7 +7,6 @@ set -x GOPATH /Users/kern/Code/go
 set -x EDITOR vim
 set -gx LC_ALL en_US.UTF-8
 set -gx HOMEBREW_CASK_OPTS "--appdir=~/Applications"
-set -gx VIMRUNTIME /Users/kern/homebrew/share/vim/vim81
 
 source ~/Code/dotFiles/fish/shortcuts.fish
 status --is-interactive; and pyenv init - | source
