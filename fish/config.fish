@@ -7,7 +7,7 @@ set -x EDITOR vim
 set -gx LC_ALL en_US.UTF-8
 
 source ~/Code/dotFiles/fish/shortcuts.fish
-source /usr/share/fish/functions/fzf.fish
+# source (fzf-share)/fzf.fish
 
 # some small function to facilitate the day to day
 function glog; git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative; end

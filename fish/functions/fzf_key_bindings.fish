@@ -1,1 +1,0 @@
-/Users/kern/homebrew/opt/fzf/shell/key-bindings.fish
