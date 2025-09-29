@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term foot
+set $term ghostty
 # Your preferred application launcher
 set $menu rofi -show combi
 
@@ -22,8 +22,9 @@ set $menu rofi -show combi
 #
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
 output * bg ~/.config/sway/bg.jpg fill
+output eDP-1 pos 0 0
 output 'Samsung Electric Company LU28R55 HX5X700977' {
-	pos 0 0
+	pos 1920 0
 	res 3840x2160
 	scale 1.2
 }
